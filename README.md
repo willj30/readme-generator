@@ -17,10 +17,15 @@
   
 
   ## Installation
-  The user will need to download the inquirer package using the npm install command in node js. Once this is done, they can then run the node index.js command and the README file will be created after answering the prompts.
+  The user will need to download the inquirer package using the npm install command in node js. 
   
   ## Usage
-  This should be used to create a basic README for your projects.
+  Once the required dependencies are installed, open the integrated terminal and run the "node index.js" command. This will display prompts and the README file will be created after answering all of them.
+
+  Demonstration:
+
+ [![Watch the video](./Develop/images/readme-screenshot.png)](https://drive.google.com/file/d/1LMsrm8VizmqNhLZsmiFvTRNNzapP50o8/preview)
+ 
 
   ## License
   The license this project is under is MIT. For more information, please click the link below:
