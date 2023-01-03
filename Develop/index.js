@@ -8,9 +8,9 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is your project name?',
-        validate: your_Input => {
-            if (your_Input) {
+        message: 'What is the name of your project?',
+        validate: titleInput => {
+            if (titleInput) {
                 return true;
             } else {
                 console.log('Please enter a project name.');
@@ -23,8 +23,8 @@ const questions = [
         type: 'input',
         name: 'description',
         message: 'Please provide a short description of your project. What was your motivation? What problem does it solve?',
-        validate: your_description => {
-            if (your_description) {
+        validate: userDescription => {
+            if (userDescription) {
                 return true;
             } else {
                 console.log('Please enter a few words about your project.');
@@ -35,9 +35,9 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'Please provide any installation instructions for your project.',
-        validate: your_installation => {
-            if (your_installation) {
+        message: 'Please provide any installation or system requirements for your project.',
+        validate: installationInput => {
+            if (installationInput) {
                 return true;
             } else {
                 console.log('Please provide installation information. If none, type N/A.');
@@ -49,8 +49,8 @@ const questions = [
         type: 'input',
         name: 'usage',
         message: 'Please provide details on how your project should be used.',
-        validate: your_usage => {
-            if (your_usage) {
+        validate: usageInput => {
+            if (usageInput) {
                 return true;
             } else {
                 console.log('How should people use your project?');
@@ -59,25 +59,18 @@ const questions = [
         }
     }, 
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
-        message: 'Please choose the license for your project',
-        choices: ['MIT License', 'MPL 2.0 License', 'ISC License', 'Apache License', 'N/A'],
-        validate: your_license => {
-            if (your_license) {
-                return true;
-            } else {
-                console.log('Please select a license or N/A.');
-                return false;
-            }
-        }
+        message: 'Please choose the license for your project.',
+        choices: ['MIT', 'ISC', 'Unlicense', 'None'],
+      
     },
     {
         type: 'input',
         name: 'contribution',
-        message: 'How can others contribute to your project',
-        validate: your_contribution => {
-            if (your_contribution) {
+        message: 'How can others contribute to your project?',
+        validate: contributionInst => {
+            if (contributionInst) {
                 return true;
             } else {
                 console.log('Please let people know how or if they can contribute.');
@@ -89,8 +82,8 @@ const questions = [
         type: 'input',
         name: 'test',
         message: 'How can another user test your project?',
-        validate: your_test => {
-            if (your_test) {
+        validate: testInput => {
+            if (testInput) {
                 return true;
             } else {
                 console.log('Are there any ways to test your project?');
@@ -102,8 +95,8 @@ const questions = [
         type: 'input',
         name: 'username',
         message: 'What is your GitHub username?',
-        validate: your_username => {
-            if (your_username) {
+        validate: usernameInput => {
+            if (usernameInput) {
                 return true;
             } else {
                 console.log('Please provide your GitHub username.');
@@ -115,8 +108,8 @@ const questions = [
         type: 'input',
         name: 'email',
         message: 'What is your email address?',
-        validate: your_email=> {
-            if (your_email) {
+        validate: emailInput => {
+            if (emailInput) {
                 return true;
             } else {
                 console.log('Please provide an email address.');

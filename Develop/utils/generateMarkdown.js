@@ -1,29 +1,21 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === 'Apache License') {
-    return `[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-  } else if (license === 'MIT License') {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  } else if (license === 'ISC License') {
-    return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
-  } else if (license === 'MPL2.0 License') {
-    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-  } else license === '';
+  if (license !== 'None') {
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+} else {
+    return '';
+}
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === 'Apache License') {
-    return `https://opensource.org/licenses/Apache-2.0`;
-  } else if (license === 'MIT License') {
-    return `https://opensource.org/licenses/MIT`;
-  } else if (license === 'ISC License') {
-    return "https://opensource.org/licenses/ISC";
-  } else if (license === 'MPL2.0 License') {
-    return "https://opensource.org/licenses/MPL-2.0";
-  } else license === '';
+  if (license !== 'None') {
+    return `https://opensource.org/licenses/${license}`
+} else {
+    return '';
+}
 }
 
 // TODO: Create a function that returns the license section of README
@@ -32,42 +24,42 @@ function renderLicenseSection(license) {
   if (!license) {
     return '';
   } else {
-    return `##License`
+    return `## License`
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
- 
   
-  ## License
-  ${data.license}
-
   ${renderLicenseBadge(data.license)}
+ 
 
-  ${renderLicenseLink(data.license)}
-
+  ## Description
+  ${data.description}
   
   ## Table of Contents
-  * [License](#license)
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contributing](#contributing)
+  * [License](#license)
+  * [Contribution](#contribution)
   * [Tests](#tests)
   * [Questions](#questions)
   
-  ## Description
-  ${data.description}
 
   ## Installation
   ${data.installation}
   
   ## Usage
   ${data.usage}
+
+  ${renderLicenseSection(data.license)}
+  The license this project is under is ${data.license}. For more information, please click the link below:
+
+  ${renderLicenseLink(data.license)}
   
-  ## Contributing
+  ## Contribution
   ${data.contribution}
   
   ## Tests
@@ -75,7 +67,7 @@ function generateMarkdown(data) {
   
   ## Questions
   Any Questions? You can email me at ${data.email}
-  Or, find me on github at https://github/${data.username}
+  Or, reach out to me on GitHub at https://github/${data.username}
 `;
 }
 
